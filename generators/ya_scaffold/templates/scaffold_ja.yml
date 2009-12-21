@@ -1,0 +1,16 @@
+ja:
+  railties:
+    scaffold:
+      new: "新規{{model}}"
+      back: "戻る"
+      listing: "{{model}}一覧"
+      edit: "編集"
+      editing: "{{model}}編集"
+      show: "表示"
+      create: "追加"
+      update: "更新"
+      destroy: "削除"
+      confirmation: "削除します。よろしいですか？"
+      created_success: "{{model}}を追加しました。"
+      updated_success: "{{model}}を更新しました。"
+      destroyed_success: "{{model}}を削除しました。"

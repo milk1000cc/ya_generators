@@ -1,0 +1,8 @@
+<%%= form.error_messages %>
+
+<% for attribute in attributes -%>
+<p>
+  <%%= form.label :<%= attribute.name_or_reference %>, <%= model_name %>.human_attribute_name('<%= attribute.name_or_reference %>') %><br />
+  <%%= form.<%= attribute.field_type %> :<%= attribute.name_or_reference %> %>
+</p>
+<% end -%>

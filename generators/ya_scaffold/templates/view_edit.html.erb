@@ -1,0 +1,13 @@
+<h1>
+  <%%= translate(:editing, :default => "Editing {{model}}", :model => <%= model_name %>.human_name, :scope => [:railties, :scaffold]) %>
+</h1>
+
+<%% form_for @<%= singular_name %>, :url => { :action => :show, :id => @<%= singular_name %> } do |form| %>
+  <%%= render form %>
+  <p>
+    <%%= form.submit translate(:update, :default => "Update", :scope => [:railties, :scaffold]) %>
+  </p>
+<%% end %>
+
+<%%= link_to translate(:show, :default => 'Show', :scope => [:railties, :scaffold]), :action => :show, :id => @<%= singular_name %> %> |
+<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), :action => :index %>

@@ -1,0 +1,58 @@
+h1. YaGenerators
+
+This plugin provides yet another scaffold generator and model generator for
+* Japanese
+* RSpec fan
+* Factory Girl fan
+* i18n fan
+
+h2. Install
+
+<pre>
+% ./script/plugin install git://github.com/milk1000cc/ya_generators.git
+</pre>
+
+h2. Big difference between "scaffold" and "ya_scaffold"
+
+"ya_scaffold" command ignores namespace when it generates models.
+See the following example for details.
+
+h2. Example
+
+<pre>
+% ./script/generate ya_scaffold Admin::Comment user:references title:string body:text
+      create  app/controllers/admin
+      create  app/helpers/admin
+      create  app/views/admin/comments
+      create  app/views/layouts/admin
+      create  spec/controllers/admin
+      create  spec/helpers/admin
+      create  app/views/admin/comments/index.html.erb
+      create  app/views/admin/comments/show.html.erb
+      create  app/views/admin/comments/new.html.erb
+      create  app/views/admin/comments/edit.html.erb
+      create  app/views/admin/comments/_form.html.erb
+      create  app/views/layouts/admin/application.html.erb
+      create  app/controllers/admin/application_controller.rb
+      create  spec/controllers/admin/comments_controller_spec.rb
+      create  app/controllers/admin/comments_controller.rb
+      create  spec/helpers/admin/comments_helper_spec.rb
+      create  app/helpers/admin/comments_helper.rb
+  dependency  ya_model
+      exists    app/models/
+      create    spec/models/
+      create    spec/factories/
+      create    app/models/comment.rb
+      create    spec/models/comment_spec.rb
+      create    spec/factories/comment.rb
+      create    db/migrate
+      create    db/migrate/20091214050211_create_comments.rb
+</pre>
+
+<pre>
+% ./script/generate ya_model Admin::Comment user:references title:string body:text
+</pre>
+
+h2. Copyright
+
+Copyright (c) 2009 milk1000cc, released under the MIT license

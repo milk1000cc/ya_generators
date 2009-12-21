@@ -1,0 +1,12 @@
+<h1>
+  <%%= translate(:new, :default => "New {{model}}", :model => <%= model_name %>.human_name, :scope => [:railties, :scaffold]) %>
+</h1>
+
+<%% form_for @<%= singular_name %>, :url => { :action => :index } do |form| %>
+  <%%= render form %>
+  <p>
+    <%%= form.submit translate(:create, :default => "Create", :scope => [:railties, :scaffold]) %>
+  </p>
+<%% end %>
+
+<%%= link_to translate(:back, :default => 'Back', :scope => [:railties, :scaffold]), :action => :index %>
