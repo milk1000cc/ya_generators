@@ -48,7 +48,7 @@ describe <%= controller_class_name %>Controller do
     end
   end
 
-  describe 'GET /<%= controller_file_path %>/:id' do
+  describe 'GET /<%= controller_file_path %>/:id/edit' do
     before do
       @<%= singular_name %> = mock_model(<%= model_name %>)
       <%= model_name %>.stub :find => @<%= singular_name %>
