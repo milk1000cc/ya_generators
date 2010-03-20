@@ -25,6 +25,29 @@ describe <%= controller_class_name %>Controller do
     end
   end
 
+  describe 'GET /<%= controller_file_path %>/:id' do
+    before do
+      @<%= singular_name %> = mock_model(<%= model_name %>)
+      <%= model_name %>.stub :find => @<%= singular_name %>
+    end
+
+    it 'は、指定された <%= model_name %> を取得して @<%= singular_name %> に設定すること' do
+      <%= model_name %>.should_receive(:find).with('1').and_return @<%= singular_name %>
+      get :show, :id => 1
+      assigns(:<%= singular_name %>).should == @<%= singular_name %>
+    end
+
+    it 'は、レスポンスが成功すること' do
+      get :show, :id => 1
+      response.should be_success
+    end
+
+    it 'は、show テンプレートを描画すること' do
+      get :show, :id => 1
+      response.should render_template(:show)
+    end
+  end
+
   describe 'GET /<%= controller_file_path %>/new' do
     before do
       @<%= singular_name %> = mock_model(<%= model_name %>)
