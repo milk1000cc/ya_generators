@@ -2,12 +2,10 @@
 require 'spec_helper'
 
 describe <%= class_name %> do
-  <%- attributes.find_all { |v| v.reference? }.each do |a| -%>
-  it 'は、特定の <%= a.name.classify %> に所属すること' do
-    <%= a.name %> = Factory(:<%= a.name %>)
-    <%= singular_name %> = Factory(:<%= singular_name %>, :<%= a.name %>_id => <%= a.name %>.id)
-    <%= singular_name %>.<%= a.name %>.should == <%= a.name %>
-  end
+  <%- if attributes.any? { |v| v.reference? } -%>
+    <%- attributes.find_all { |v| v.reference? }.each do |a| -%>
+  it { should belong_to(:<%= a.name %>) }
+    <%- end -%>
 
   <%- end -%>
   describe 'を作成するとき' do

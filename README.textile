@@ -4,6 +4,7 @@ This plugin provides yet another scaffold generator and model generator for
 * Japanese
 * RSpec fan
 * Factory Girl fan
+* Shoulda fan
 * i18n fan
 
 h2. Install
@@ -55,4 +56,4 @@ h2. Example
 
 h2. Copyright
 
-Copyright (c) 2009 milk1000cc, released under the MIT license
+Copyright (c) 2009-2010 milk1000cc, released under the MIT license
